@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title>TransLab</title>
+</head>
+
+<body>
+
+  <!-- Menu lateral -->
+  <header id="menuStick">
+    <div class="pos-f-t">
+      <nav class="navbar navbar-dark barMenu">
+        <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+      <nav id="sideMenu" class="nav flex-column float-left menu  menuClosed">
+        <div onclick="toggleMenu()" class="closeButton">
+          <span aria-hidden="true">&times;</span>
+        </div>
+        <div class="menuContent">
+          <a class="nav-link" onclick="" href="#">Ver saldo</a>
+          <a class="nav-link" onclick="" href="#">Calcular tarifa</a>
+          <a class="nav-link" onclick="" href="#">Perfil</a>
+          <a class="nav-link" onclick="" href="#">Preguntas frecuentes</a>
+          <a class="nav-link" onclick="" href="#">Home</a>
+          <a class="nav-link" onclick="logout()" href="#">Cerrar sesión</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Login -->
+  <div class="container-fluid" id="screenLogin">
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-10">
+        <img src="img/imagen.png" id="logoLogin" alt="logo translab">
+      </div>
+      <div class="col-1">
+      </div>
+    </div>
+
+    <div class="rowForm">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail" id="label">TRANS-LAB</label>
+          <input class="form-control" id="email" aria-describedby="emailHelp" placeholder="Correo electrónico">
+          <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword"></label>
+          <input type="password" class="form-control" id="password" placeholder="Contraseña de 8 números">
+        </div>
+        <div class="form-group form-check">
+        </div>
+        <button type="button" onclick="login()" class="btn btn-primary" id="btn">Iniciar sesión</button>
+      </form>
+    </div>
+
+    <div class="rowThree">
+      <p id=""></p>
+      <p>¿Olvidaste tu contraseña?</p>
+      <p>¿NO TIENES CUENTA?
+        <input id="register" onclick="register()" type="button" value="REGISTRATE">
+      </p>
+    </div>
+  </div>
+
+  <!-- Menu -->
+  <div class="container-fluid" id="screenMenu">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="col-sm-11">
+          <button class="menu" onclick="verSaldo()" id="verSaldo">VER SALDO</button>
+        </div>
+        <div class="col-sm-11">
+          <button class="menu" onclick="calcularTarifa()" id="calcularTarifa">CALCULAR TARIFA</button>
+        </div>
+        <div class="col-sm-11">
+          <button class="menu" onclick="perfil()" id="perfil">PERFIL</button>
+        </div>
+        <div class="col-sm-11 pad">
+          <button class="menu" onclick="preguntas()" id="preguntas">PREGUNTAS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Perfil usuario -->
+  <div class="container-fluid userImage" id="screenProfile">
+    <div>
+      <img id="imagenPerfil" class="usuarioimg" src="img/blankprofile.png" alt="usuario">
+    </div>
+
+    <div class="row">
+      <div id="showEmail"></div>
+    </div>
+
+    <div class="row">
+      <input class="form-control cardNumber" id="numeroBip" placeholder="Número tarjeta">
+    </div>
+
+    <div class="row">
+      <button type="submit" onclick="agregarTarjeta()" class="btn btn-primary" id="btnCard">AGREGAR TARJETA</button>
+    </div>
+
+    <div id="cardOptions"></div>
+  </div>
+
+  <!-- Preguntas frecuentes-->
+  <div class="container-fluid questions" id="screenQA">
+    <div class= "questions">
+      <p>PREGUNTAS FRECUENTES</p>
+    </div>
+    <div class="row answers">
+      <div id="accordion" role="tablist">
+        <div class="card">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="">
+                ¿Para quién son los asientos preferenciales?
+              </a>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="card-body">
+              Todos los buses del Sistema de Transporte Público de la capital deben tener en la ventana, específicamente al costado de los asientos destinados para uso preferencial, una pieza adhesiva con el símbolo internacional de una silla de ruedas (SIA de color blanco en un recuadro azul) el que indica que estos asientos están reservados para personas con discapacidad que presenten movilidad reducida. Usted puede tener la total libertad de exigir al usuario que esté haciendo uso de este lugar preferencial que le ceda el asiento. También puede dirigirse al conductor para solicitarle que haga cumplir lo que indica el adhesivo mencionado.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" role="tab">
+            <h5 class="mb-0">
+              <a class="" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                ¿Cuáles son las empresas de buses de Transantiago?
+              </a>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby>
+            <div class="card-body">
+              Las empresas concesionarias de los recorridos de buses de Transantiago son las siguientes:
+
+              Buses Metropolitana: Representado por el color Turquesa y prestando los servicios 500 y J
+              Alsacia: Representado por el color Celeste y prestando los servicios 100, 408, 408e, 410 y 410e
+              Express: Representado por el color Naranjo y prestando los servicios 400 y D
+              SuBus: Representado por el color Azul y prestando los servicios 200 y G
+              Vule: Representado por el color Verde y prestando los servicios 300, E, H e I
+              RedBus: Representado por el color Rojo y prestando los servicios B y C
+              STP: Representado por el color Amarillo y prestando los servicios F
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" role="tab">
+            <h5 class="mb-0">
+              <a class="" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                ¿Cómo operan los servicios nocturnos?
+              </a>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby>
+            <div class="card-body">
+              El Sistema de Transporte Público de Santiago ofrece recorridos de buses que operan las 24 horas y otros que prestan servicio exclusivamente en horario nocturno, entre la 01:00 y las 05:30 hrs. La cobertura nocturna que ofrece el Sistema de Transporte Público de Santiago permite la conexión entre comunas alejadas y el centro de la ciudad. Además, los recorridos nocturnos prestan servicio en los principales puntos donde se concentra la actividad nocturna de la ciudad, tales como Av. Providencia, Plaza Italia, Alameda, Vicuña Mackenna, Irarrázaval y Bellavista, entre otros.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" role="tab">
+            <h5 class="mb-0">
+              <a class="" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                ¿Dónde se pueden hacer reclamos, denuncias o consultas?
+              </a>
+            </h5>
+          </div>
+          <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby>
+            <div class="card-body">
+              Usted puede hacer reclamos, denuncias o consultas a través de nuestros canales oficiales de atención: Call Center 800 73 00 73 (gratuito desde teléfonos fijos) o 600 730 00 73 (desde celulares y/o regiones, costo de una llamada local), página web y RRSS de Transantiago.
+
+              Cuando realice una denuncia o reclamo, ya sea a través del Call Center o por medio de los otros canales de atención, recuerde entregar todos los datos solicitados. Sólo así se podrá dar curso a su requerimiento. De acuerdo a la naturaleza de la denuncia o el reclamo, estos datos podrían ser, entre otros, la placa patente del bus, número de recorrido, hora, día y lugar, donde ocurrió el incidente.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Calcular tarifa -->
+  <div class="container-fluid" id="screenTarifa">
+    <div class="row">
+      <br>
+      <div class="col-sm-1">
+      </div>
+      <div class="col-sm-10">
+        <input type="number" id="cardNumber" placeholder="Número de tarjeta">
+      </div>
+      <br>
+      <div class="col-sm-1">
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-1">
+      </div>
+
+      <div class="col-sm-5">
+        <span id="tarifa">Tarifa</span>
+        <span> Tarjeta </span>
+        <div class="input-group mb-3">
+          <select class="Seleccione su tarjeta" id="valorTarifa">
+            <option selected>Selecciona una tarifa</option>
+            <option value="760">Horario alto</option>
+            <option value="680">Horario medio</option>
+            <option value="630">Horario bajo</option>
+          </select>
+          <select class="Selecciona tu tarjeta" id="selectCard">
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-10">
+        <button type="button" id="calcular" class="btn btn-secondary btn-lg">Calcular</button>
+      </div>
+      <div id="precio"></div>
+      <div id="resultado"></div>
+    </div>
+  </div>
+
+  <!-- Ver saldo -->
+  <div class="container-fluid" id="screenSaldo">
+    <div class="row">
+      <br>
+      <div class="col-sm-1">
+      </div>
+      <div class="col-sm-10">
+        <input type="number" id="tarjetaBip" placeholder="Ingrese número de tarjeta">
+      </div>
+      <select class="Seleccione su tarjeta" id="dataBipContainer">
+      </select>
+      <div class="col-sm-10">
+        <button type="button" id="saldoDisponible" class="btn btn-secondary btn-lg">Ver saldo</button>
+      </div>
+      <div id="resultContainer">
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB36tWrQZ9HsanvsLl--fx7U2V79K9IzdA",
+      authDomain: "translab-95810.firebaseapp.com",
+      databaseURL: "https://translab-95810.firebaseio.com",
+      projectId: "translab-95810",
+      storageBucket: "translab-95810.appspot.com",
+      messagingSenderId: "334579930861"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+  <script src="js/login.js"></script>
+  <script src="js/menu.js"></script>
+  
+</body>
+
+</html>

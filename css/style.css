@@ -65,6 +65,10 @@ p{
   border-color: #F6A800;
 }
 
+#imagenPerfil {
+  width: 60%;
+}
+
 /* Menú */
 .menu {
   background-color: #F6A800;
@@ -75,3 +79,5 @@ p{
   color: black;
   font-size: 1em;
 }
+
+

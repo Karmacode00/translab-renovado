@@ -15,26 +15,18 @@
 
   <!-- Menu lateral -->
   <header id="menuStick">
-    <div class="pos-f-t">
-      <nav class="navbar navbar-dark barMenu">
-        <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </nav>
-      <nav id="sideMenu" class="nav flex-column float-left menu  menuClosed">
-        <div onclick="toggleMenu()" class="closeButton">
-          <span aria-hidden="true">&times;</span>
-        </div>
-        <div class="menuContent">
-          <a class="nav-link" onclick="" href="#">Ver saldo</a>
-          <a class="nav-link" onclick="" href="#">Calcular tarifa</a>
-          <a class="nav-link" onclick="" href="#">Perfil</a>
-          <a class="nav-link" onclick="" href="#">Preguntas frecuentes</a>
-          <a class="nav-link" onclick="" href="#">Home</a>
-          <a class="nav-link" onclick="logout()" href="#">Cerrar sesión</a>
-        </div>
-      </nav>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Menú
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" onclick="verPerfil()" href="#">Perfil</a>
+        <a class="dropdown-item" onclick="verMenu()" href="#">Menú</a>
+        <a class="dropdown-item" onclick="verPreguntas()" href="#">Preguntas Frecuentes</a>
+        <a class="dropdown-item" onclick="verSaldo()" href="#">Saldo</a>
+        <a class="dropdown-item" onclick="verTarifa()" href="#">Calcular Tarifa</a>
+        <a class="dropdown-item" onclick="logout()" href="#">Cerrar Sesión</a>
+      </div>
     </div>
   </header>
 
@@ -53,7 +45,7 @@
     <div class="rowForm">
       <form>
         <div class="form-group">
-          <label for="exampleInputEmail" id="label">TRANS-LAB</label>
+          <label for="exampleInputEmail" id="label">TRANSLAB</label>
           <input class="form-control" id="email" aria-describedby="emailHelp" placeholder="Correo electrónico">
           <small id="emailHelp" class="form-text text-muted"></small>
         </div>
@@ -84,13 +76,16 @@
           <button class="menu" onclick="verSaldo()" id="verSaldo">VER SALDO</button>
         </div>
         <div class="col-sm-11">
-          <button class="menu" onclick="calcularTarifa()" id="calcularTarifa">CALCULAR TARIFA</button>
+          <button class="menu" onclick="verTarifa()" id="calcularTarifa">CALCULAR TARIFA</button>
         </div>
         <div class="col-sm-11">
-          <button class="menu" onclick="perfil()" id="perfil">PERFIL</button>
+          <button class="menu" onclick="verPerfil()" id="perfil">PERFIL</button>
         </div>
         <div class="col-sm-11 pad">
-          <button class="menu" onclick="preguntas()" id="preguntas">PREGUNTAS</button>
+          <button class="menu" onclick="verPreguntas()" id="preguntas">PREGUNTAS FRECUENTES</button>
+        </div>
+        <div class="col-sm-11">
+          <button class="menu" onclick="verMenu()" id="perfil">INICIO</button>
         </div>
       </div>
     </div>

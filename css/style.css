@@ -46,7 +46,7 @@ color: black;
 }
 
 p{
-  color: white;
+  color: black;
 }
 
 #logoLogin {
@@ -67,6 +67,10 @@ p{
 
 #imagenPerfil {
   width: 60%;
+}
+
+.contenedor {
+  color: black
 }
 
 /* Menú */

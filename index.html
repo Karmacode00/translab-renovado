@@ -102,14 +102,14 @@
     </div>
 
     <div class="row">
-      <input class="form-control cardNumber" id="numeroBip" placeholder="Número tarjeta">
+      <input type="tel" maxlength="8" class="form-control cardNumber" id="numeroBip" placeholder="Número tarjeta">
     </div>
 
     <div class="row">
-      <button type="submit" onclick="agregarTarjeta()" class="btn btn-primary" id="btnCard">AGREGAR TARJETA</button>
+      <button type="submit" onclick="onlyDigit()" class="btn btn-primary" id="btnCard">AGREGAR TARJETA</button>
     </div>
 
-    <div id="cardOptions"></div>
+    <div id="cardNumbers"></div>
   </div>
 
   <!-- Preguntas frecuentes-->
@@ -243,12 +243,12 @@
       <div class="col-sm-10">
         <input type="number" id="tarjetaBip" placeholder="Ingrese número de tarjeta">
       </div>
-      <select class="Seleccione su tarjeta" id="dataBipContainer">
+      <select class="Seleccione su tarjeta" id="bipContainer">
       </select>
       <div class="col-sm-10">
         <button type="button" id="saldoDisponible" class="btn btn-secondary btn-lg">Ver saldo</button>
       </div>
-      <div id="resultContainer">
+      <div id="resultadoBipContainer">
       </div>
     </div>
   </div>
@@ -277,6 +277,7 @@
 
   <script src="js/login.js"></script>
   <script src="js/menu.js"></script>
+  <script src="js/bip.js"></script>
   
 </body>
 

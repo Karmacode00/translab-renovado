@@ -1,7 +1,7 @@
 //Fetch de la tarjeta bip para ver el saldo
 saldoDisponible.addEventListener('click', () => {
   let numeroBip = tarjetaBip.value;
-  let resultadoBip = bipContainer.value;
+ /*  let resultadoBip = bipContainer.value;*/
   fetch(`https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${numeroBip || resultadoBip}`)
     .then(response => response.json())
     .then(data => {
@@ -10,6 +10,7 @@ saldoDisponible.addEventListener('click', () => {
       resultadoBipContainer.innerHTML = `
      <p id="saldoTarjeta">Saldo total :</p>  <p class="saldoTotal"> ${data['saldoTarjeta']}</p>
     `;
+  
     })
     .catch(error => {
       console.error("No fue posible acceder a la información.");

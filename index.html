@@ -73,7 +73,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="col-sm-11">
-          <button class="menu" onclick="verSaldo()" id="verSaldo">VER SALDO</button>
+          <button class="menu" onclick="verSaldo()" id="saldo">VER SALDO</button>
         </div>
         <div class="col-sm-11">
           <button class="menu" onclick="verTarifa()" id="calcularTarifa">CALCULAR TARIFA</button>
@@ -114,7 +114,7 @@
 
   <!-- Preguntas frecuentes-->
   <div class="container-fluid questions" id="screenQA">
-    <div class= "questions">
+    <div id= "questions">
       <p>PREGUNTAS FRECUENTES</p>
     </div>
     <div class="row answers">
@@ -222,8 +222,13 @@
             <option value="680">Horario medio</option>
             <option value="630">Horario bajo</option>
           </select>
-          <select class="Selecciona tu tarjeta" id="selectCard">
-          </select>
+          <div class="input-group mb-3">
+            <select class="Seleccione su tarjeta" id="seleccionarBip">
+              <option selected>Selecciona una tarjeta</option>
+              <option value="760">Tarjeta 1</option>
+              <option value="680">Tarjeta 2</option>
+              <option value="630">Tarjeta 3</option>
+            </select>
         </div>
       </div>
       <div class="col-sm-10">
@@ -233,18 +238,25 @@
       <div id="resultado"></div>
     </div>
   </div>
+  </div>
 
   <!-- Ver saldo -->
   <div class="container-fluid" id="screenSaldo">
     <div class="row">
       <br>
-      <div class="col-sm-1">
-      </div>
       <div class="col-sm-10">
         <input type="number" id="tarjetaBip" placeholder="Ingrese número de tarjeta">
       </div>
-      <select class="Seleccione su tarjeta" id="bipContainer">
-      </select>
+      <div class="col-sm-5">
+        <div class="input-group mb-3">
+          <select class="Seleccione su tarjeta" id="seleccionarBip">
+            <option selected>Selecciona una tarjeta</option>
+            <option value="760">Tarjeta 1</option>
+            <option value="680">Tarjeta 2</option>
+            <option value="630">Tarjeta 3</option>
+          </select>
+        </div>
+      </div>
       <div class="col-sm-10">
         <button type="button" id="saldoDisponible" class="btn btn-secondary btn-lg">Ver saldo</button>
       </div>

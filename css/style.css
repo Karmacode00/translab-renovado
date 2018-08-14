@@ -69,10 +69,6 @@ p{
   width: 60%;
 }
 
-.contenedor {
-  color: black
-}
-
 /* Menú */
 .menu {
   background-color: #F6A800;
@@ -84,4 +80,9 @@ p{
   font-size: 1em;
 }
 
+/* Preguntas frecuentes */
+#questions {
+  font-size: 40px;
+  background-color: #F6A800;
+}
 

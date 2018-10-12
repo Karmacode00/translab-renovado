@@ -1,0 +1,88 @@
+body {
+  background-color: #3E3F41;
+  text-align: center;
+}
+
+/* Orden de cada sección de la página*/
+#menuStick{
+  display: none;
+}
+
+#screenMenu{
+  display: none;
+  background-color: #DDDEE0;
+}
+
+#screenProfile{
+  display: none;
+  background-color: #DDDEE0;
+}
+
+#screenQA{
+  display: none;
+  background-color: #DDDEE0;
+}
+
+#screenTarifa{
+  display: none;
+  background-color: #DDDEE0;  
+}
+
+#screenSaldo{
+  display: none;
+  background-color: #DDDEE0;
+}
+
+/* Botones y estilo del login */
+.btn-primary {
+background-color: #F6A800;
+color: black;
+}
+
+#label {
+  font-size: 30px;
+  text-align: center;
+  color: #F6A800;
+}
+
+p{
+  color: black;
+}
+
+#logoLogin {
+  margin-top: 10%;
+  width: 80%;
+  height: auto;
+}
+
+#register {
+  color: #F6A800;
+  background-color: transparent;
+  border: none;
+}
+
+#emailUsuario {
+  border-color: #F6A800;
+}
+
+#imagenPerfil {
+  width: 60%;
+}
+
+/* Menú */
+.menu {
+  background-color: #F6A800;
+  width: 100%;
+}
+
+.nav-link {
+  color: black;
+  font-size: 1em;
+}
+
+/* Preguntas frecuentes */
+#questions {
+  font-size: 40px;
+  background-color: #F6A800;
+}
+

@@ -1,7 +1,7 @@
 //Fetch de la tarjeta bip para ver el saldo
 saldoDisponible.addEventListener('click', () => {
   let numeroBip = tarjetaBip.value;
- /*  let resultadoBip = bipContainer.value;*/
+ let resultadoBip = seleccionarBip.value;
   fetch(`https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${numeroBip || resultadoBip}`)
     .then(response => response.json())
     .then(data => {
@@ -43,16 +43,3 @@ function onlyDigit(){
  }
   
 
-
-/* function agregarTarjeta() {
-  const tarjetaBip = document.getElementById('numeroBip').value;
-  if (tarjetaBip.length == 0) {
-    alert('Debe ingresar una tarjeta');
-  } else {
-    cardNumbers.innerHTML = `
-  <p id="tarjetas"> ${tarjetaBip} </p>`
-  }
-}
-
-
-*/
